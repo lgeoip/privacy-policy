@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>lgeoip — Privacy Policy</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%230057fa' d='M12 22s-8-5.8-8-12a8 8 0 1 1 16 0c0 6.2-8 12-8 12z'/%3E%3Ccircle cx='12' cy='10' r='3' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="icon" href="../favicon.ico" type="image/x-icon">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/montserrat/600.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/montserrat/700.css">
@@ -52,7 +52,6 @@ body{
   font-size:16px;
   line-height:1.65;
   -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
 }
 ::selection{background:var(--accent);color:#fff}
 a{color:var(--accent);text-decoration:none}
@@ -124,14 +123,6 @@ section{position:relative;scroll-margin-top:110px}
 .hero{padding:170px 0 70px}
 .hero .container{padding:0 clamp(14px,3.2vw,52px)}
 .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
-.doc-tag{
-  display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border-radius:100px;
-  font-family:var(--fm);font-size:12px;font-weight:500;letter-spacing:.14em;color:var(--muted);
-  background:var(--glass);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
-  border:1px solid var(--accent-line);margin-bottom:26px;
-  opacity:0;animation:fadeUp .8s .1s cubic-bezier(.2,.7,.2,1) forwards;
-}
-.doc-tag svg{width:14px;height:14px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .hero h1{
   font-family:var(--fd);font-weight:900;font-size:clamp(2.4rem,4.8vw,3.8rem);
   line-height:1.06;letter-spacing:-.035em;margin-bottom:22px;
@@ -141,25 +132,13 @@ section{position:relative;scroll-margin-top:110px}
 .hline:nth-child(2)>span{animation-delay:.14s}
 @keyframes rise{to{transform:translateY(0)}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
-.ip-accent{color:var(--accent);position:relative;display:inline-block}
-.ip-accent svg{position:absolute;left:0;bottom:-10px;width:100%;height:12px;overflow:visible}
-.ip-accent path{stroke:var(--accent);stroke-width:3;fill:none;stroke-linecap:round;stroke-dasharray:320;stroke-dashoffset:320;animation:draw 1.1s .9s cubic-bezier(.4,0,.2,1) forwards;opacity:.55}
-@keyframes draw{to{stroke-dashoffset:0}}
+.ip-accent{color:var(--accent);display:inline-block}
 .hero-sub{
-  color:var(--muted);font-size:17px;font-weight:500;max-width:520px;margin-bottom:20px;
-  opacity:0;animation:fadeUp .8s .4s cubic-bezier(.2,.7,.2,1) forwards;
+  color:var(--muted);font-size:17px;font-weight:500;max-width:520px;margin-bottom:30px;
+  opacity:0;animation:fadeUp .8s .2s cubic-bezier(.2,.7,.2,1) forwards;
 }
 .hero-sub b{color:var(--ink)}
-.hero-meta{
-  display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px;
-  opacity:0;animation:fadeUp .8s .5s cubic-bezier(.2,.7,.2,1) forwards;
-}
-.meta-chip{
-  font-family:var(--fm);font-size:11.5px;font-weight:700;letter-spacing:.08em;
-  padding:8px 14px;border-radius:100px;background:var(--accent-soft);
-  border:1px solid var(--accent-line);color:var(--accent);
-}
-.hero-actions{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fadeUp .8s .6s cubic-bezier(.2,.7,.2,1) forwards}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fadeUp .8s .35s cubic-bezier(.2,.7,.2,1) forwards}
 
 /* glance card */
 .glance{padding:30px;opacity:0;animation:fadeUp .9s .45s cubic-bezier(.2,.7,.2,1) forwards;transform-origin:center}
@@ -177,81 +156,80 @@ section{position:relative;scroll-margin-top:110px}
 .gl-item b{font-size:14.5px;display:block;letter-spacing:-.01em}
 .gl-item span{font-size:12.5px;color:var(--muted);font-weight:500}
 
-/* ============ MARQUEE ============ */
-.marquee{border-block:1px solid var(--accent-line);background:linear-gradient(90deg,rgba(0,87,250,.03),rgba(0,87,250,.08),rgba(0,87,250,.03));overflow:hidden;position:relative;z-index:2}
-.mq-track{display:flex;width:max-content;animation:mq 46s linear infinite}
-.marquee:hover .mq-track{animation-play-state:paused}
-@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.mq-group{display:flex}
-.mq-item{
-  font-family:var(--fm);font-size:12px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--muted);padding:16px 0;display:flex;align-items:center;white-space:nowrap;
-}
-.mq-item::after{content:'✦';color:var(--accent);margin:0 34px;font-size:10px}
-
 /* ============ DOC LAYOUT ============ */
-.doc{padding:90px 0 60px}
+.doc{padding:80px 0 60px}
 .doc-grid{display:grid;grid-template-columns:270px 1fr;gap:44px;align-items:start}
 
-/* TOC */
+/* TOC — styles apply only to section links, not to buttons */
 .toc{position:sticky;top:104px;padding:24px}
 .toc h4{font-family:var(--fm);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--faint);margin-bottom:16px}
-.toc a{
+.toc a:not(.btn){
   display:flex;gap:12px;align-items:baseline;padding:8.5px 12px;border-radius:10px;
   font-size:13.5px;font-weight:700;color:var(--muted);
   transition:background .25s,color .25s,transform .25s;
   margin-bottom:2px;
 }
-.toc a:hover{color:var(--accent);transform:translateX(3px)}
-.toc a .n{font-family:var(--fm);font-size:11px;color:var(--faint);font-weight:500;flex:none;transition:color .25s}
-.toc a.active{background:var(--accent);color:#fff;box-shadow:0 10px 24px -10px rgba(0,87,250,.55)}
-.toc a.active .n{color:rgba(255,255,255,.75)}
+.toc a:not(.btn):hover{color:var(--accent);transform:translateX(3px)}
+.toc a:not(.btn) .n{font-family:var(--fm);font-size:11px;color:var(--faint);font-weight:500;flex:none;transition:color .25s}
+.toc a:not(.btn).active{background:var(--accent);color:#fff;box-shadow:0 10px 24px -10px rgba(0,87,250,.55)}
+.toc a:not(.btn).active .n{color:rgba(255,255,255,.75)}
 .toc-pdf{margin-top:18px;padding-top:18px;border-top:1px dashed rgba(0,87,250,.2)}
 .toc-pdf p{font-size:12px;color:var(--faint);font-weight:600;margin-bottom:10px}
+.toc-pdf .btn{color:#fff}
 
-/* policy cards */
-.pol-list{display:flex;flex-direction:column;gap:22px}
-.pol-card{padding:36px 40px;position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .35s}
-.pol-card:hover{border-color:rgba(0,87,250,.38);box-shadow:var(--shadow-lg)}
-.pol-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:4px;background:linear-gradient(180deg,#7ab3ff,var(--accent));opacity:0;transition:opacity .35s}
-.pol-card:hover::before{opacity:1}
-.pol-head{display:flex;align-items:baseline;gap:16px;margin-bottom:18px}
-.pol-num{
+/* ============ SINGLE POLICY DOCUMENT (plain, on background) ============ */
+.policy-doc{padding:0}
+.policy-doc h2{
+  font-family:var(--fd);font-weight:800;
+  font-size:clamp(1.22rem,2.1vw,1.5rem);
+  letter-spacing:-.015em;line-height:1.25;
+  display:flex;align-items:center;gap:14px;
+  margin:44px 0 16px;
+  scroll-margin-top:110px;
+}
+.policy-doc h2:first-of-type{margin-top:0}
+.policy-doc h2:not(:first-of-type){
+  padding-top:34px;
+  border-top:1px dashed rgba(0,87,250,.14);
+}
+.policy-doc .pol-num{
   font-family:var(--fm);font-weight:700;font-size:13px;color:var(--accent);
   background:var(--accent-soft);border:1px solid var(--accent-line);
-  padding:6px 11px;border-radius:10px;flex:none;transition:background .3s,color .3s;
+  padding:6px 11px;border-radius:10px;flex:none;line-height:1.1;
 }
-.pol-card:hover .pol-num{background:var(--accent);color:#fff}
-.pol-card h2{font-family:var(--fd);font-weight:800;font-size:clamp(1.25rem,2.2vw,1.55rem);letter-spacing:-.015em;line-height:1.2}
-.pol-card h3{font-family:var(--fd);font-weight:700;font-size:16px;margin:22px 0 10px}
-.pol-card p{color:var(--muted);font-size:15px;font-weight:500;margin-bottom:13px}
-.pol-card p:last-child{margin-bottom:0}
-.pol-card p b{color:var(--ink)}
-.pol-card p a{font-weight:700;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(0,87,250,.4)}
-.pol-card .mono{font-family:var(--fm);font-size:13px;background:rgba(0,87,250,.06);border:1px solid var(--accent-line);padding:2px 8px;border-radius:7px;color:var(--ink);font-weight:500}
+.policy-doc h3{font-family:var(--fd);font-weight:700;font-size:16px;margin:22px 0 10px}
+.policy-doc p{color:var(--muted);font-size:15px;font-weight:500;margin-bottom:13px}
+.policy-doc p:last-child{margin-bottom:0}
+.policy-doc p b{color:var(--ink)}
+.policy-doc p a{font-weight:700;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(0,87,250,.4)}
+.policy-doc .mono{font-family:var(--fm);font-size:13px;background:rgba(0,87,250,.06);border:1px solid var(--accent-line);padding:2px 8px;border-radius:7px;color:var(--ink);font-weight:500}
 
-.doc-list{list-style:none;margin:6px 0 14px}
+.doc-list{list-style:none;margin:6px 0 16px}
 .doc-list li{
   position:relative;padding:10px 14px 10px 34px;color:var(--muted);font-size:14.5px;font-weight:500;
-  border-radius:12px;transition:background .25s,transform .25s;margin-bottom:4px;
+  border-radius:12px;margin-bottom:4px;
 }
-.doc-list li:hover{background:rgba(0,87,250,.05);transform:translateX(4px)}
 .doc-list li::before{
   content:'✦';position:absolute;left:12px;top:10px;color:var(--accent);font-size:11px;
 }
 .doc-list li b{color:var(--ink)}
 
-.check-list{list-style:none;margin:6px 0 14px}
+/* check list — SVG checkmark */
+.check-list{list-style:none;margin:6px 0 16px}
 .check-list li{
-  position:relative;padding:11px 16px 11px 42px;color:var(--ink);font-size:14.5px;font-weight:600;
+  position:relative;padding:11px 16px 11px 44px;color:var(--ink);font-size:14.5px;font-weight:600;
   background:rgba(10,157,108,.05);border:1px solid rgba(10,157,108,.18);border-radius:12px;margin-bottom:8px;
-  transition:transform .25s,box-shadow .25s;
 }
-.check-list li:hover{transform:translateX(5px);box-shadow:0 10px 24px -14px rgba(10,157,108,.4)}
 .check-list li::before{
-  content:'✓';position:absolute;left:14px;top:50%;transform:translateY(-50%);
-  width:19px;height:19px;border-radius:50%;background:var(--ok);color:#fff;
-  font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center;
+  content:'';
+  position:absolute;left:14px;top:50%;
+  width:20px;height:20px;border-radius:50%;
+  transform:translateY(-50%);
+  background-color:var(--ok);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.6 4.6L19 7.4'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:12px 12px;
 }
 .check-list li span{color:var(--muted);font-weight:500}
 
@@ -265,16 +243,15 @@ section{position:relative;scroll-margin-top:110px}
 .contact-card{
   display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
   background:rgba(0,87,250,.05);border:1px solid var(--accent-line);border-radius:var(--radius-md);
-  padding:20px 24px;margin-top:8px;transition:transform .3s,box-shadow .3s;
+  padding:20px 24px;margin-top:14px;
 }
-.contact-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-sm)}
 .contact-lbl{font-size:13px;color:var(--faint);font-weight:700;display:block;margin-bottom:3px}
 .contact-mail{font-family:var(--fm);font-weight:700;font-size:17px;color:var(--accent)}
 
 /* pdf banner */
 .pdf-banner{
   display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
-  padding:32px 38px;margin-top:56px;position:relative;overflow:hidden;
+  padding:32px 38px;margin-top:32px;position:relative;overflow:hidden;
 }
 .pdf-banner::before{content:'';position:absolute;top:-70px;right:-40px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(0,87,250,.14),transparent 70%);pointer-events:none}
 .pdf-txt h3{font-family:var(--fd);font-weight:800;font-size:21px;margin-bottom:4px}
@@ -285,7 +262,7 @@ footer{border-top:1px solid var(--accent-line);background:linear-gradient(180deg
 .ft-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:44px;padding:64px 0 44px}
 .ft-brand p{color:var(--muted);font-size:14px;font-weight:500;margin:16px 0 20px;max-width:280px}
 .ft-col h5{font-family:var(--fm);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--faint);margin-bottom:18px}
-.ft-col a{display:block;color:var(--ink);font-size:14px;font-weight:700;margin-bottom:11px;transition:color .25s,transform .25s}
+.ft-col a{display:block;color:var(--ink);font-size:14px;font-weight:700;margin-bottom:11px;text-decoration:none;transition:color .25s,transform .25s}
 .ft-col a:hover{color:var(--accent);transform:translateX(4px)}
 .ft-mid{padding:22px 0;border-top:1px dashed rgba(0,87,250,.18);display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
 .ft-mid span{font-size:13.5px;color:var(--muted);font-weight:600}
@@ -307,7 +284,7 @@ footer{border-top:1px solid var(--accent-line);background:linear-gradient(180deg
   .doc-grid{grid-template-columns:1fr;gap:30px}
   .toc{position:static;display:flex;flex-wrap:wrap;gap:8px;padding:18px}
   .toc h4,.toc-pdf{display:none}
-  .toc a{padding:8px 13px}
+  .toc a:not(.btn){padding:8px 13px}
   .ft-top{grid-template-columns:1fr 1fr}
 }
 @media (max-width:860px){
@@ -315,8 +292,9 @@ footer{border-top:1px solid var(--accent-line);background:linear-gradient(180deg
 }
 @media (max-width:640px){
   .hero{padding:140px 0 56px}
-  .doc{padding:64px 0 40px}
-  .pol-card{padding:28px 22px}
+  .doc{padding:56px 0 40px}
+  .policy-doc h2{font-size:1.1rem;gap:10px}
+  .policy-doc .pol-num{font-size:11.5px;padding:5px 9px}
   .ft-top{grid-template-columns:1fr;gap:34px}
 }
 
@@ -325,9 +303,7 @@ footer{border-top:1px solid var(--accent-line);background:linear-gradient(180deg
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.001s !important;animation-iteration-count:1 !important;transition-duration:.001s !important}
   .hline>span{transform:none;animation:none}
-  .doc-tag,.hero-sub,.hero-meta,.hero-actions,.glance{opacity:1;animation:none}
-  .ip-accent path{stroke-dashoffset:0;animation:none}
-  .mq-track{animation:none;flex-wrap:wrap}
+  .hero-sub,.hero-actions,.glance{opacity:1;animation:none}
   .js .reveal{opacity:1;transform:none}
 }
 </style>
@@ -363,19 +339,11 @@ footer{border-top:1px solid var(--accent-line);background:linear-gradient(180deg
 <section class="hero">
   <div class="container hero-grid">
     <div>
-      <span class="doc-tag">
-        <svg viewBox="0 0 24 24"><path d="M12 3l7 2.8v5.4c0 4.5-3 7.6-7 9.3-4-1.7-7-4.8-7-9.3V5.8z"/><path d="M9 11.6l2.1 2.1 3.9-4.1"/></svg>
-        LEGAL · PRIVACY POLICY
-      </span>
       <h1>
         <span class="hline"><span>lgeoip</span></span>
-        <span class="hline"><span><span class="ip-accent">Privacy Policy<svg viewBox="0 0 300 12" preserveAspectRatio="none"><path d="M3 9 C 60 2, 150 2, 297 7"/></svg></span></span></span>
+        <span class="hline"><span><span class="ip-accent">Privacy Policy</span></span></span>
       </h1>
       <p class="hero-sub">This document describes the procedure for <b>collecting, processing, storing and protecting</b> information related to personal data when using the Service. Transparency is not a feature here — it is the foundation.</p>
-      <div class="hero-meta">
-        <span class="meta-chip">EFFECTIVE DATE · NOVEMBER 20, 2026</span>
-        <span class="meta-chip">SCOPE · TUTUURG.GITHUB.IO/LGEOIP</span>
-      </div>
       <div class="hero-actions">
         <a class="btn btn-primary" href="https://drive.google.com/uc?export=download&id=1Utw8yOlLTj1xz4ezrwaVHsT1dz7SbDcb" target="_blank" rel="noopener">
           <svg class="b-ico" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 19h16"/></svg>
@@ -415,20 +383,6 @@ footer{border-top:1px solid var(--accent-line);background:linear-gradient(180deg
   </div>
 </section>
 
-<!-- ================= MARQUEE ================= -->
-<div class="marquee" aria-hidden="true">
-  <div class="mq-track">
-    <div class="mq-group">
-      <span class="mq-item">No Persistent Logs</span><span class="mq-item">No Cookies</span><span class="mq-item">No Third Parties</span><span class="mq-item">HTTPS Only</span><span class="mq-item">GDPR Ready</span><span class="mq-item">Consent-Based</span><span class="mq-item">Local Processing</span><span class="mq-item">Data Not Sold</span><span class="mq-item">Anonymous Stats</span><span class="mq-item">Revocable Consent</span>
-      <span class="mq-item">No Persistent Logs</span><span class="mq-item">No Cookies</span><span class="mq-item">No Third Parties</span><span class="mq-item">HTTPS Only</span><span class="mq-item">GDPR Ready</span><span class="mq-item">Consent-Based</span><span class="mq-item">Local Processing</span><span class="mq-item">Data Not Sold</span><span class="mq-item">Anonymous Stats</span><span class="mq-item">Revocable Consent</span>
-    </div>
-    <div class="mq-group">
-      <span class="mq-item">No Persistent Logs</span><span class="mq-item">No Cookies</span><span class="mq-item">No Third Parties</span><span class="mq-item">HTTPS Only</span><span class="mq-item">GDPR Ready</span><span class="mq-item">Consent-Based</span><span class="mq-item">Local Processing</span><span class="mq-item">Data Not Sold</span><span class="mq-item">Anonymous Stats</span><span class="mq-item">Revocable Consent</span>
-      <span class="mq-item">No Persistent Logs</span><span class="mq-item">No Cookies</span><span class="mq-item">No Third Parties</span><span class="mq-item">HTTPS Only</span><span class="mq-item">GDPR Ready</span><span class="mq-item">Consent-Based</span><span class="mq-item">Local Processing</span><span class="mq-item">Data Not Sold</span><span class="mq-item">Anonymous Stats</span><span class="mq-item">Revocable Consent</span>
-    </div>
-  </div>
-</div>
-
 <!-- ================= DOCUMENT ================= -->
 <section class="doc">
   <div class="container doc-grid">
@@ -455,18 +409,17 @@ footer{border-top:1px solid var(--accent-line);background:linear-gradient(180deg
       </div>
     </aside>
 
-    <!-- BODY -->
+    <!-- BODY: single continuous document, plain on background -->
     <div class="pol-list">
 
-      <article class="pol-card glass reveal" id="sec-1">
-        <div class="pol-head"><span class="pol-num">01</span><h2>General provisions</h2></div>
+      <article class="policy-doc reveal">
+
+        <h2 id="sec-1"><span class="pol-num">01</span>General provisions</h2>
         <p>This Privacy Policy (hereinafter referred to as the <b>"Policy"</b>) describes the procedure for collecting, processing, storing and protecting information related to personal data when using the web service <span class="mono">tutuurg.github.io/lgeoip</span> (hereinafter referred to as the <b>"Service"</b>).</p>
         <p>The service is designed to provide information about <b>geolocation, network parameters, and the likelihood of anonymization</b> of IP addresses.</p>
         <div class="callout">By using the Service, you agree to the terms of <b>this Policy</b>.</div>
-      </article>
 
-      <article class="pol-card glass reveal" id="sec-2">
-        <div class="pol-head"><span class="pol-num">02</span><h2>What data is being processed</h2></div>
+        <h2 id="sec-2"><span class="pol-num">02</span>What data is being processed</h2>
         <h3>2.1. Automatically collected data</h3>
         <p>When accessing the Service, the following data may be processed:</p>
         <ul class="doc-list">
@@ -474,10 +427,8 @@ footer{border-top:1px solid var(--accent-line);background:linear-gradient(180deg
           <li><b>Browser time zone</b> (if provided by the user via the <span class="mono">tz</span> parameter);</li>
           <li><b>HTTP request headers</b> (User-Agent, Referer, and other technical metadata).</li>
         </ul>
-      </article>
 
-      <article class="pol-card glass reveal" id="sec-3">
-        <div class="pol-head"><span class="pol-num">03</span><h2>Purposes of data processing</h2></div>
+        <h2 id="sec-3"><span class="pol-num">03</span>Purposes of data processing</h2>
         <p>The processing of the IP address is carried out <b>exclusively</b> for the following purposes:</p>
         <ul class="doc-list">
           <li>Determining the approximate <b>geographical location</b> (country, city, region);</li>
@@ -486,16 +437,12 @@ footer{border-top:1px solid var(--accent-line);background:linear-gradient(180deg
           <li>Generating Service usage statistics (<b>without user identification</b>);</li>
           <li>Ensuring the <b>operability and security</b> of the Service.</li>
         </ul>
-      </article>
 
-      <article class="pol-card glass reveal" id="sec-4">
-        <div class="pol-head"><span class="pol-num">04</span><h2>Legal grounds for processing</h2></div>
+        <h2 id="sec-4"><span class="pol-num">04</span>Legal grounds for processing</h2>
         <p>Personal data is processed based on the user's <b>explicit consent</b>, which is requested upon the first visit to the Service's web page.</p>
         <div class="callout">Consent can be revoked at any time via the web page interface <b>("Revoke Consent")</b>.</div>
-      </article>
 
-      <article class="pol-card glass reveal" id="sec-5">
-        <div class="pol-head"><span class="pol-num">05</span><h2>Data storage and protection</h2></div>
+        <h2 id="sec-5"><span class="pol-num">05</span>Data storage and protection</h2>
         <ul class="check-list">
           <li>IP addresses are <b>not stored</b> in permanent logs or databases of the Service.</li>
           <li>Technical logs <span>(request time, request type)</span> can be stored temporarily in the server's RAM and automatically deleted upon restart.</li>
@@ -503,15 +450,11 @@ footer{border-top:1px solid var(--accent-line);background:linear-gradient(180deg
           <li>Data is transmitted between the browser and the server using the secure <b>HTTPS</b> protocol.</li>
           <li>The service does <b>not use cookies or sessionStorage</b> to track users.</li>
         </ul>
-      </article>
 
-      <article class="pol-card glass reveal" id="sec-6">
-        <div class="pol-head"><span class="pol-num">06</span><h2>Transfer of data to third parties</h2></div>
+        <h2 id="sec-6"><span class="pol-num">06</span>Transfer of data to third parties</h2>
         <p>The Service <b>does not transfer</b> IP addresses or other personal information to third parties. All database queries (<b>MaxMind, IP2Proxy</b>) and analysis logic are performed <b>locally on the project server</b>. Your IP address is not transmitted to an external API for analysis.</p>
-      </article>
 
-      <article class="pol-card glass reveal" id="sec-7">
-        <div class="pol-head"><span class="pol-num">07</span><h2>Your rights</h2></div>
+        <h2 id="sec-7"><span class="pol-num">07</span>Your rights</h2>
         <p>In accordance with the <b>GDPR</b> and other applicable regulations, you have the right to:</p>
         <ul class="doc-list">
           <li><b>Consent</b> to data processing;</li>
@@ -520,15 +463,11 @@ footer{border-top:1px solid var(--accent-line);background:linear-gradient(180deg
           <li>To receive <b>information about the processing</b> of your personal data.</li>
         </ul>
         <p>To exercise these rights, you can contact us using the contact information provided in <a href="#sec-9"><b>section 9</b></a>.</p>
-      </article>
 
-      <article class="pol-card glass reveal" id="sec-8">
-        <div class="pol-head"><span class="pol-num">08</span><h2>Automatic system learning</h2></div>
+        <h2 id="sec-8"><span class="pol-num">08</span>Automatic system learning</h2>
         <p>The service includes an <b>auto-learning function</b> to determine ASNs associated with hosting providers and VPNs. This happens automatically when an IP is detected with a high probability of anonymization. This information is stored in the local <span class="mono">known_asns.json</span> file in an <b>impersonal form</b> (only the ASN number and label).</p>
-      </article>
 
-      <article class="pol-card glass reveal" id="sec-9">
-        <div class="pol-head"><span class="pol-num">09</span><h2>Contacts</h2></div>
+        <h2 id="sec-9"><span class="pol-num">09</span>Contacts</h2>
         <p>For questions related to the processing of personal data and this Privacy Policy, you can contact:</p>
         <div class="contact-card">
           <div>
@@ -540,13 +479,12 @@ footer{border-top:1px solid var(--accent-line);background:linear-gradient(180deg
             Write an email
           </a>
         </div>
-      </article>
 
-      <article class="pol-card glass reveal" id="sec-10">
-        <div class="pol-head"><span class="pol-num">10</span><h2>Policy Changes</h2></div>
+        <h2 id="sec-10"><span class="pol-num">10</span>Policy changes</h2>
         <p>We reserve the right to make changes to this Policy. The current version is always available at:</p>
         <p><a href="https://lgeoip.github.io/privacy-policy" target="_blank" rel="noopener" class="mono" style="text-decoration:none">https://lgeoip.github.io/privacy-policy</a></p>
         <div class="callout plain">In case of significant changes, we will notify users through the Service interface or place a prominent announcement on the website.</div>
+
       </article>
 
       <!-- PDF BANNER -->
@@ -629,9 +567,6 @@ footer{border-top:1px solid var(--accent-line);background:linear-gradient(180deg
     var p = max > 0 ? (window.scrollY / max) * 100 : 0;
     progress.style.width = p + '%';
   }
-  window.addEventListener('scroll', onScroll, {passive:true});
-  window.addEventListener('resize', onScroll);
-  onScroll();
 
   /* ---------- reveal ---------- */
   var revEls = document.querySelectorAll('.reveal');
@@ -646,25 +581,61 @@ footer{border-top:1px solid var(--accent-line);background:linear-gradient(180deg
     revEls.forEach(function(el){ io.observe(el); });
   }
 
-  /* ---------- TOC scrollspy ---------- */
+  /* ---------- TOC scrollspy (reliable scroll-based) ---------- */
   var tocLinks = Array.prototype.slice.call(document.querySelectorAll('.toc a[href^="#sec-"]'));
-  var sections = tocLinks.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+  var sections = tocLinks
+    .map(function(a){ return document.getElementById(a.getAttribute('href').slice(1)); })
+    .filter(Boolean);
+
+  var SPY_OFFSET = 140;   // slightly larger than scroll-margin-top (110)
+  var LOCK_MS = 1000;     // pause spy while smooth scroll from a TOC click runs
+  var lockUntil = 0;
+
   function setActive(id){
     tocLinks.forEach(function(a){
       a.classList.toggle('active', a.getAttribute('href') === '#' + id);
     });
   }
-  if ('IntersectionObserver' in window){
-    var spy = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){
-        if (en.isIntersecting) setActive(en.target.id);
-      });
-    }, {rootMargin:'-25% 0px -60% 0px', threshold:0});
-    sections.forEach(function(sec){ if (sec) spy.observe(sec); });
+
+  function updateSpy(){
+    if (!sections.length) return;
+    if (Date.now() < lockUntil) return;
+
+    var doc = document.documentElement;
+    var atBottom = (window.innerHeight + window.scrollY) >= (doc.scrollHeight - 2);
+    var currentId;
+
+    if (atBottom) {
+      currentId = sections[sections.length - 1].id;
+    } else {
+      var scrollPos = window.scrollY + SPY_OFFSET;
+      currentId = sections[0].id;
+      for (var i = 0; i < sections.length; i++){
+        var top = sections[i].getBoundingClientRect().top + window.scrollY;
+        if (top <= scrollPos) { currentId = sections[i].id; }
+        else { break; }
+      }
+    }
+    setActive(currentId);
   }
+
+  function onAnyScroll(){ onScroll(); updateSpy(); }
+  window.addEventListener('scroll', onAnyScroll, {passive:true});
+  window.addEventListener('resize', onAnyScroll);
+
+  /* clicking a TOC link: set state immediately, then lock the spy briefly */
   tocLinks.forEach(function(a){
-    a.addEventListener('click', function(){ setActive(a.getAttribute('href').slice(1)); });
+    a.addEventListener('click', function(){
+      var id = a.getAttribute('href').slice(1);
+      setActive(id);
+      lockUntil = Date.now() + LOCK_MS;
+      /* re-sync after the smooth scroll finishes */
+      window.setTimeout(updateSpy, LOCK_MS + 50);
+    });
   });
+
+  onScroll();
+  updateSpy();
 })();
 </script>
 </body>
